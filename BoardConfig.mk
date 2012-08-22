@@ -18,9 +18,9 @@
 #
 
 # Set this up here so that BoardVendorConfig.mk can override it
-BOARD_USES_GENERIC_AUDIO := false
-BOARD_PREBUILT_LIBAUDIO := true
-BOARD_USE_YAMAHAPLAYER := true
+BOARD_USES_GENERIC_AUDIO := true
+BOARD_PREBUILT_LIBAUDIO := false
+BOARD_USE_YAMAHAPLAYER := false
 
 BOARD_USES_LIBSECRIL_STUB := true
 
@@ -40,7 +40,7 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
-TARGET_BOARD_PLATFORM := smdkv310
+#TARGET_BOARD_PLATFORM := samsung
 TARGET_BOOTLOADER_BOARD_NAME := GT-I9070
 TARGET_RECOVERY_INITRC := device/samsung/c1-common/recovery.rc
 TARGET_PROVIDES_MEDIASERVER := true
@@ -90,10 +90,10 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 # janice uses bcm4330
 BOARD_WLAN_DEVICE := bcm4330
 WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/vendor/firmware/bcm4330_sta.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/vendor/firmware/bcm4330_aps.bin"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wifi/bcm4330_sta.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wifi/bcm4330_aps.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "dhd"
-WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/vendor/firmware/bcm4330_sta.bin nvram_path=/system/etc/nvram_net.txt"
+#~ WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/vendor/firmware/bcm4330_sta.bin nvram_path=/system/etc/nvram_net.txt"
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 12
