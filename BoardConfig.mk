@@ -18,14 +18,14 @@
 #
 
 # Set this up here so that BoardVendorConfig.mk can override it
-BOARD_USES_GENERIC_AUDIO := false
-BOARD_PREBUILT_LIBAUDIO := true
-BOARD_USE_YAMAHAPLAYER := true
+BOARD_USES_GENERIC_AUDIO := true
+BOARD_PREBUILT_LIBAUDIO := false
+BOARD_USE_YAMAHAPLAYER := false
 
 BOARD_USES_LIBSECRIL_STUB := true
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/galaxys2/BoardConfigVendor.mk
+-include vendor/samsung/janice/BoardConfigVendor.mk
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -40,8 +40,8 @@ TARGET_NO_RADIOIMAGE := true
 
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
-TARGET_BOARD_PLATFORM := smdkv310
-TARGET_BOOTLOADER_BOARD_NAME := GT-I9100
+#TARGET_BOARD_PLATFORM := samsung
+TARGET_BOOTLOADER_BOARD_NAME := GT-I9070
 TARGET_RECOVERY_INITRC := device/samsung/c1-common/recovery.rc
 TARGET_PROVIDES_MEDIASERVER := true
 
@@ -77,7 +77,7 @@ BOARD_NAND_PAGE_SIZE := 4096 -s 128
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
-TARGET_PREBUILT_KERNEL := device/samsung/galaxys2/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/janice/kernel
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912
@@ -87,13 +87,13 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Connectivity - Wi-Fi
 WPA_SUPPLICANT_VERSION := VER_0_6_X
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-# galaxys2 uses bcm4330
+# janice uses bcm4330
 BOARD_WLAN_DEVICE := bcm4330
 WIFI_DRIVER_MODULE_PATH     := "/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH     := "/system/vendor/firmware/bcm4330_sta.bin"
-WIFI_DRIVER_FW_AP_PATH      := "/system/vendor/firmware/bcm4330_aps.bin"
+WIFI_DRIVER_FW_STA_PATH     := "/system/etc/wifi/bcm4330_sta.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/system/etc/wifi/bcm4330_aps.bin"
 WIFI_DRIVER_MODULE_NAME     :=  "dhd"
-WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/vendor/firmware/bcm4330_sta.bin nvram_path=/system/etc/nvram_net.txt"
+#~ WIFI_DRIVER_MODULE_ARG      :=  "firmware_path=/system/vendor/firmware/bcm4330_sta.bin nvram_path=/system/etc/nvram_net.txt"
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 12
@@ -101,7 +101,7 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/galaxys2/recovery/recovery_ui.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/janice/recovery/recovery_ui.c
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -109,7 +109,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/c1-common/shbootimg.mk
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := galaxys2,GT-I9100,GT-I9100M,GT-I9100T
+TARGET_OTA_ASSERT_DEVICE := janice,GT-I9070
 
 # Include aries specific stuff
 -include device/samsung/c1-common/Android.mk

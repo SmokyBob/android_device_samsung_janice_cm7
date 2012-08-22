@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=galaxys2
+DEVICE=janice
 COMMON=c1-common
 MANUFACTURER=samsung
 
